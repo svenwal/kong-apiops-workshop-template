@@ -19,7 +19,7 @@ jobs:
         /bin/sh -c 'pushd /tmp && deck validate'
     - name: Deploy declarative config
       run: |
-        /bin/sh -c 'pushd /tmp && deck sync'
+        /bin/sh -c 'pushd /tmp && deck sync --select-tag github_action'
     - name: Publish Spec to Dev Portal
       run: |
         /bin/sh -c 'pushd ./specs && http --check-status --ignore-stdin PUT $ADMIN_URL/default/files/specs/orders.yaml contents=@orders.yaml'
