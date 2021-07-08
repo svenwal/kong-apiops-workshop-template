@@ -22,4 +22,4 @@ jobs:
         /bin/sh -c 'pushd /tmp && deck sync'
     - name: Publish Spec to Dev Portal
       run: |
-        /bin/sh -c 'pushd ./specs && http --check-status --ignore-stdin PUT :8001/default/files/specs/orders.yaml contents=@orders.yaml'
+        /bin/sh -c 'pushd ./specs && http --check-status --ignore-stdin PUT $ADMIN_URL/default/files/specs/orders.yaml contents=@orders.yaml'
